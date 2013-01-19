@@ -17,7 +17,7 @@
           id: idx,
           title: $item.find('title').text(),
           link:  $item.find('link').text(),
-          text: $item.find('description').html(),
+          text: $item.find('description').text(),
           date: month,
           audio: $item.find('enclosure').attr('url'),
         }; 
