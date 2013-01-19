@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:cc="http://web.resource.org/cc/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<channel>
+		<atom:link href="http://thescalawags.libsyn.com/rss" rel="self" type="application/rss+xml"/>
+		<title>thescalawags's podcast</title>
+		<pubDate>Fri, 07 Dec 2012 03:50:00 +0000</pubDate>
+		<lastBuildDate>Fri, 18 Jan 2013 17:15:47 +0000</lastBuildDate>
+		<generator>Libsyn WebEngine 2.0</generator>
+		<link>http://thescalawags.libsyn.com</link>
+		<language>en</language>
+		<copyright><![CDATA[2012-2013]]></copyright>
+		<docs>http://thescalawags.libsyn.com</docs>
+		<managingEditor>thescalawags@googlegroups.com (thescalawags@googlegroups.com)</managingEditor>
+		<description><![CDATA[A discussion-oriented podcast relating to the Scala programming language and its community]]></description>
+		<image>
+			<url>http://assets.libsyn.com/content/5105523.jpg</url>
+			<title>thescalawags's podcast</title>
+			<link><![CDATA[http://thescalawags.libsyn.com]]></link>
+		</image>
+		<itunes:author>Scalawags Podcast</itunes:author>
+		<itunes:keywords>scala</itunes:keywords>
+	<itunes:category text="Technology">
+		<itunes:category text="Software How-To"/>
+	</itunes:category>
+	<itunes:category text="Technology">
+		<itunes:category text="Tech News"/>
+	</itunes:category>
+	<itunes:category text="Technology">
+		<itunes:category text="Podcasting"/>
+	</itunes:category>
+		<itunes:image href="http://assets.libsyn.com/content/5105523.jpg" />
+		<itunes:explicit>clean</itunes:explicit>
+		<itunes:owner>
+			<itunes:name><![CDATA[Dick Wall]]></itunes:name>
+			<itunes:email>thescalawags@gmail.com</itunes:email>
+		</itunes:owner>
+		<itunes:summary><![CDATA[]]></itunes:summary>
+		<itunes:subtitle><![CDATA[]]></itunes:subtitle>
+				<item>
+			<title>Episode #1 - It's about Scala 2.10</title>
+			<pubDate>Fri, 07 Dec 2012 03:50:00 +0000</pubDate>
+			<guid isPermaLink="false"><![CDATA[630414c9c5ac02bf8b283abee87edc8a]]></guid>
+			<link><![CDATA[http://thescalawags.libsyn.com/episode-1-it-s-about-scala-2-10]]></link>
+			<media:thumbnail url="http://assets.libsyn.com/item/2187845" />
+			<description><![CDATA[<p><b style="font-family: 'Times New Roman'; font-size: medium; font-weight: normal;"><span style="font-size: 15px; font-family: Arial; background-color: transparent; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">Intro&rsquo;s</span><br /><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">What is Scalawags</span><br /><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">About us</span><br /><span style="font-size: 15px; font-family: Arial; background-color: transparent; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">Site, group, logistics</span><br /></b></p>
+<ul style="margin-top: 0pt; margin-bottom: 0pt;">
+<li dir="ltr" style="list-style-type: disc; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Website: </span><a href="http://www.scalawags.tv/"><span style="color: #1155cc; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">www.scalawags.tv</span></a><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;"></span></li>
+<li dir="ltr" style="list-style-type: disc; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Message Forum: </span><a href="mailto:thescalawags@googlegroups.com"><span style="color: #1155cc; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">thescalawags@googlegroups.com</span></a><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;"></span></li>
+<li dir="ltr" style="list-style-type: disc; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Twitter: </span><a href="https://twitter.com/thescalawags"><span style="color: #1155cc; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">@thescalawags</span></a><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;"></span></li>
+<li dir="ltr" style="list-style-type: disc; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Google Plus: </span><a href="https://plus.google.com/112145465018184674652"><span style="color: #1155cc; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">https://plus.google.com/112145465018184674652</span></a><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;"></span></li>
+<li dir="ltr" style="list-style-type: disc; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Direct Email: </span><a href="mailto:thescalawags@gmail.com"><span style="color: #1155cc; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">thescalawags@gmail.com</span></a><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;"></span></li>
+<li dir="ltr" style="list-style-type: disc; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Youtube: </span><a href="http://www.youtube.com/channel/UCHxNwi3l5CGZo1kG47k7i2Q"><span style="color: #1155cc; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">http://www.youtube.com/channel/UCHxNwi3l5CGZo1kG47k7i2Q</span></a><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;"></span></li>
+</ul>
+<p><b style="font-family: 'Times New Roman'; font-size: medium; font-weight: normal;"><span style="font-size: 15px; font-family: Arial; background-color: transparent; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">This episode - Scala 2.10</span><br /></b></p>
+<ul style="margin-top: 0pt; margin-bottom: 0pt;">
+<li dir="ltr" style="list-style-type: disc; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">New Guides - </span><a href="http://docs.scala-lang.org/overviews/"><span style="color: #1155cc; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">http://docs.scala-lang.org/overviews/</span></a><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;"></span></li>
+<li dir="ltr" style="list-style-type: disc; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Features</span></li>
+<ul style="margin-top: 0pt; margin-bottom: 0pt;">
+<li dir="ltr" style="list-style-type: circle; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Virtual Pattern Matcher</span></li>
+<li dir="ltr" style="list-style-type: circle; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">String Interpolation</span></li>
+<ul style="margin-top: 0pt; margin-bottom: 0pt;">
+<li dir="ltr" style="list-style-type: square; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="font-family: 'Courier New'; color: #a64d79; background-color: transparent; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">f</span><span style="font-family: 'Courier New'; color: #38761d; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">&rdquo;${bar}-%2.2f$baz&rdquo;</span></li>
+<li dir="ltr" style="list-style-type: square; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Guide: </span><a href="http://docs.scala-lang.org/overviews/core/string-interpolation.html"><span style="color: #1155cc; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">http://docs.scala-lang.org/overviews/core/string-interpolation.html</span></a><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;"></span></li>
+</ul>
+<li dir="ltr" style="list-style-type: circle; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Macros</span></li>
+<ul style="margin-top: 0pt; margin-bottom: 0pt;">
+<li dir="ltr" style="list-style-type: square; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">f-interpolator written as macro</span></li>
+<li dir="ltr" style="list-style-type: square; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Expecty - </span><a href="https://github.com/pniederw/expecty"><span style="color: #1155cc; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">https://github.com/pniederw/expecty</span></a><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;"></span></li>
+<ul style="margin-top: 0pt; margin-bottom: 0pt;">
+<li dir="ltr" style="list-style-type: disc; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">From Gradle guy Peter</span></li>
+</ul>
+<li dir="ltr" style="list-style-type: square; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Spire: </span><a href="https://github.com/non/spire"><span style="color: #1155cc; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">https://github.com/non/spire</span></a><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;"></span></li>
+</ul>
+<li dir="ltr" style="list-style-type: circle; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Reflection</span></li>
+<ul style="margin-top: 0pt; margin-bottom: 0pt;">
+<li dir="ltr" style="list-style-type: square; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Still experimental</span></li>
+<li dir="ltr" style="list-style-type: square; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Guide: (in progress)</span></li>
+</ul>
+<li dir="ltr" style="list-style-type: circle; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">scala.concurrent</span></li>
+<ul style="margin-top: 0pt; margin-bottom: 0pt;">
+<li dir="ltr" style="list-style-type: square; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Futures / Promises / Try</span></li>
+<ul style="margin-top: 0pt; margin-bottom: 0pt;">
+<li dir="ltr" style="list-style-type: disc; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Merged from Twitter / Akka and community suggestions</span></li>
+<li dir="ltr" style="list-style-type: disc; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Guide: </span><a href="http://docs.scala-lang.org/overviews/core/futures.html"><span style="color: #1155cc; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">http://docs.scala-lang.org/overviews/core/futures.html</span></a><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;"></span></li>
+</ul>
+<li dir="ltr" style="list-style-type: square; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Conflict over scala.util.Try</span></li>
+</ul>
+<li dir="ltr" style="list-style-type: circle; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Actors -&gt; Akka</span></li>
+<ul style="margin-top: 0pt; margin-bottom: 0pt;">
+<li dir="ltr" style="list-style-type: square; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Actors lib deprecated</span></li>
+<li dir="ltr" style="list-style-type: square; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Akka now included in distribution</span></li>
+<li dir="ltr" style="list-style-type: square; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Migration toolkit available: </span><a href="http://docs.scala-lang.org/overviews/core/actors-migration-guide.html"><span style="color: #1155cc; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">http://docs.scala-lang.org/overviews/core/actors-migration-guide.html</span></a><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;"></span></li>
+</ul>
+<li dir="ltr" style="list-style-type: circle; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Value Classes + implicit classes</span></li>
+<ul style="margin-top: 0pt; margin-bottom: 0pt;">
+<li dir="ltr" style="list-style-type: square; font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline;"><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Value class guide: </span><a href="http://docs.scala-lang.org/overviews/core/value-classes.html"><span style="color: #1155cc; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">http://docs.scala-lang.org/overviews/core/value-classes.html</span></a><span style="background-color: transparent; vertical-align: baseline; white-space: pre-wrap;"></span></li>
+</ul>
+</ul>
+</ul>
+<p><b id="internal-source-marker_0.5002009770832956" style="font-family: 'Times New Roman'; font-size: medium; font-weight: normal;"><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;"></span><br /><span style="font-size: 15px; font-family: Arial; background-color: transparent; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">Scala Xchange in London</span><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;"></span><br /><a href="http://skillsmatter.com/event/scala/scala-exchange-2012"><span style="font-size: 15px; font-family: Arial; color: #1155cc; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">http://skillsmatter.com/event/scala/scala-exchange-2012</span></a><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;"></span><br /><span style="font-size: 15px; font-family: Arial; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">Real-time Analytics Talk: </span><a href="http://skillsmatter.com/podcast/scala/real-time-analytics-in-scala"><span style="font-size: 15px; font-family: Arial; color: #1155cc; background-color: transparent; vertical-align: baseline; white-space: pre-wrap;">http://skillsmatter.com/podcast/scala/real-time-analytics-in-scala</span></a></b></p>]]></description>
+			<enclosure length="95425626" type="audio/mpeg" url="http://traffic.libsyn.com/thescalawags/scalawags-episode-1.mp3" />
+			<itunes:duration>01:39:25</itunes:duration>
+			<itunes:explicit>clean</itunes:explicit>
+			<itunes:keywords>classes,value,macros,futures,scala,210</itunes:keywords>
+			<itunes:subtitle><![CDATA[Intro&rsquo;sWhat is ScalawagsAbout usSite, group, logistics
+
+Website: www.scalawags.tv
+Message Forum: thescalawags@googlegroups.com
+Twitter: @thescalawags
+Google Plus: https://plus.google.com/112145465018184674652
+Direct Email:...]]></itunes:subtitle>
+					</item>
+	</channel>
+</rss>
