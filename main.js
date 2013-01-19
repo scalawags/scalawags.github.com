@@ -1,7 +1,7 @@
 (function(){
 
   var youtubeUrl = 'https://gdata.youtube.com/feeds/api/users/UCHxNwi3l5CGZo1kG47k7i2Q/uploads?alt=json-in-script&format=5';
-  var libsynUrl = 'rss';
+  var libsynUrl = 'http://thescalawags.libsyn.com/rss';
 
 
   function embeddedPlayerUrl(id) {
