@@ -1,4 +1,40 @@
+<!DOCTYPE html>
 <html>
-<head><title>Scalawags!</title></head>
-<body><h1>Nothign to see here!</h1></body>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>The Scalawags - Monthly podcasts about Scala language.</title>
+    <meta name="description" content="Monthly podcasts about Scala language">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <header>
+      <a href="/" id="logo">Scalawags</a>
+        <nav>
+          <a href="#">Twitter</a>
+          <a href="#">Youtube</a>
+          <a href="#">About</a>
+        </nav>
+    </header>
+    <section id="list" data-bind="foreach: podcasts">
+      <article>
+         <h1><a data-bind="text: title"></a></h1>
+         <time data-bind="text: date"></time>
+         <div class="player">
+           <a class="play"></a>
+           <a class="download" data-bind="attr: { href: audio }"></a>
+           <a class="popup"></a>
+         </div>
+         <section data-bind="html: shownotes"></section>
+       </article>
+    </section>
+    <footer>
+      <p>The Scalawags, 2013</p>
+    </footer>
+    <script src="jquery.min.js"></script>
+    <script src="knockout-2.2.1.js"></script>
+    <script src="feeds.js"></script>
+    <script src="main.js"></script>
+  </body>
 </html>

@@ -1,0 +1,198 @@
+html, body {
+    height: 100%;
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #8bd5cb;
+    font: 14px "Helvetica Neue", sans-serif;
+}
+a {
+    color: #e5554d;
+    text-decoration: none;
+}
+h1, h2, h3, time {
+    font-family: "HelveticaNeue-CondensedBold", "Open Sans Condensed", "Helvetica", sans-serif;
+    font-weight: bold;
+    font-stretch: condensed;
+    letter-spacing: -.03em;
+}
+#logo {
+    display: block;
+    height: 200px;
+    background: #fff url(scalawags.png) center center no-repeat;
+    background-size: 80%;
+    text-indent: -99em;
+}
+header {
+    background: #4a3930 url(pirate.png) 0 270px no-repeat;
+    background-size: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 400px;
+    box-shadow: 5px 5px 0 #8bd5cb, 10px 10px 0 rgba(255,255,255,.3);
+}
+nav {
+    background: #e5554d;
+    height: 70px;
+}
+footer {
+    background: #4a3930;
+    color: #85736a;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 400px;
+    padding: 20px;
+}
+
+#list {
+    margin: 0 0 0 400px;
+    padding: 50px;
+}
+article {
+    position: relative;
+    width: 500px;
+    margin: 0 0 50px 0;
+    padding: 20px;
+    background: #fff;
+    color: #4a3930;
+    box-shadow: 3px 3px 0 #8bd5cb, 6px 6px 0 rgba(255,255,255,.3);
+}
+article.popup {
+    margin: 50px auto;
+}
+article h1 {
+    font-size: 22px;
+}
+article a:hover {
+    text-decoration: underline;
+}
+article .feat:before {
+    content: "Ft. "
+}
+article time {
+    position: absolute;
+    top: 22px;
+    right: 0;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 7px;
+    background: #e5554d;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+article section {
+    position: relative;
+    height: 120px;
+    overflow: hidden;
+}
+article section:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0), #fff);
+    background: -moz-linear-gradient(top, rgba(255,255,255,0), #fff);
+    background: linear-gradient(top, rgba(255,255,255,0), #fff);
+}
+article section:after {
+    content: "Read more";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: #e5554d;
+    text-align: center;
+}
+article section p {
+    margin: 1em 0 .5em;
+}
+
+.player {
+    height: 40px;
+    margin: 10px -20px;
+    padding: 0 20px;
+    background: #e5554d;
+}
+.player a {
+    display: block;
+    float: left;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+.player a {
+    background: url(buttons.png) 0 0 no-repeat;
+    background-size: 160px 40px;
+}
+.player a:hover {
+    background-color: #c73931;
+}
+
+.player .play {
+    background: url(buttons.png) 0 0 no-repeat;
+    background-size: 160px 40px;
+}
+
+.player .progress {
+    position: relative;
+    display: block;
+    float: left;
+    height: 40px;
+    width: 340px;
+}
+.player .progress span {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    bottom: 16px;
+    min-width: 8px;
+    border-radius: 10px;
+}
+.player .progress .shape {
+    top: 14px;
+    bottom: 14px;
+    left: 14px;
+    right: 14px;
+    background: #b4271f;
+}
+.player .progress .played {
+    background: #fff;
+}
+.player .progress .loaded {
+    background: #e5554d;
+    width: 20%;
+}
+.player .time {
+    color: #fff;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    right: 0;
+    font-size: 9px;
+    text-align: center;
+}
+
+.player .play.pause {
+    background-position: -40px 0;
+}
+.player .download {
+    background-position: -80px 0;
+}
+.player .popup {
+    background-position: -120px 0;
+}
+

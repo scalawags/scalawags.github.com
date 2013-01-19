@@ -17,7 +17,7 @@
           id: idx,
           title: $item.find('title').text(),
           link:  $item.find('link').text(),
-          text: $item.find('description').text(),
+          text: $item.find('description').html(),
           date: month,
           audio: $item.find('enclosure').attr('url'),
         }; 
@@ -32,8 +32,8 @@
   function parseYoutubeFeed(data) {
     var feed = data.feed;
     var raw = $.makeArray(feed.entry);
-    var results = $.map(raw, function(item, idx) {  
-      var date = new Date(item.date);
+    var results = $.map(raw, function(item, idx) {
+      var date = new Date(item.published.$t);
       var month = monthNames[date.getMonth()];
       // Capture odd Youtube ID.
       var ids = item.id.$t.split('/');
