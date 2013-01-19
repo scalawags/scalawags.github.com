@@ -22,11 +22,22 @@
     self.audio = ko.observable();
     self.audioLink = ko.observable();
     self.shownotes = ko.observable('<i>No Show notes Available</i>');
+
+    // User controlled state/actions
+    self.expandedVideo = ko.observable(false);
+    self.toggleVideo = function() {
+      self.expandedVideo(!self.expandedVideo());
+    }
   }
 
   function PageModel() {
     var self = this;
     self.podcasts = ko.observableArray();
+
+    self.shownpodcasts = ko.computed(function() {
+      //TODO - paginate!
+      return self.podcasts().slice(0,12);
+    });
     self.load = function() {
       feeds.readYoutube(youtubeUrl, function(feed) {
          // TODO - should we bump into a model?

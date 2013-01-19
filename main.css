@@ -1,7 +1,7 @@
 html, body {
     height: 100%;
 }
-* {
+footer *, footer, header *, header {
     margin: 0;
     padding: 0;
     border: 0;
@@ -90,12 +90,22 @@ article time {
     text-transform: uppercase;
 }
 
-article section {
+article div.notes {
     position: relative;
     height: 120px;
     overflow: hidden;
 }
-article section:before {
+
+article div.expand {
+  overflow: auto;
+  height: 100%;
+}
+
+article div.expand:before {
+  background: none;
+}
+
+article div.notes:before {
     content: " ";
     display: block;
     position: absolute;
@@ -107,8 +117,8 @@ article section:before {
     background: -moz-linear-gradient(top, rgba(255,255,255,0), #fff);
     background: linear-gradient(top, rgba(255,255,255,0), #fff);
 }
-article section:after {
-    content: "Read more";
+
+#notestoggle {
     display: block;
     position: absolute;
     left: 0;
@@ -117,7 +127,7 @@ article section:after {
     color: #e5554d;
     text-align: center;
 }
-article section p {
+article div.notes p {
     margin: 1em 0 .5em;
 }
 
