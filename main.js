@@ -28,7 +28,7 @@
       self.expandedVideo(!self.expandedVideo());
     }
 
-    // Play controls
+    // Play controls - TODO - move these into custom model...
     self.audioLoaded = ko.observable(false);
     self.play = function() {
       if(!self.audioLoaded()) { self.audioLoaded(true); }
@@ -49,9 +49,22 @@
       }
       return '';
     });
+    // TODO - figure out how to bind this directly to the audio element...
     self.currentTime = ko.observable(0);
     self.duration = ko.observable(1);
+    self.percent = ko.computed(function() {
+      return (self.currentTime() / self.duration())*100;
+    });
     self.audioEl = ko.observable();
+    self.skipTo = function(data, e) {
+      var audio = self.audioEl();
+      if (audio) {
+        var left = e.offsetX - 15;
+        var progress = e.currentTarget;
+        var percent = left / ($(progress).width() - 30 );
+        audio.currentTime = percent * audio.duration;
+      }
+    };
     self.setupPlayer = function(elements) {
       var audio  = $(elements).filter('audio')[0];
       audio.addEventListener('ended', function(evt) {

@@ -28,12 +28,7 @@
            <a class="download" data-bind="attr: { href: audio }"></a>
            <a class="popup" data-bind="click: toggleVideo"></a>
            <a class="play" data-bind="click: play, css: pausedCss"></a>
-           <span class="progress" data-bind="template: { name: 'progress-bar', if: audioLoaded, afterRender: setupPlayer }">
-           <!--  <span class="shape"></span>
-             <span class="loaded"></span>
-             <span class="played"></span>
-             <p class="time"></p>
-             <audio data-bind="attr: { src: audio } "></audio></div> -->
+           <span class="progress" data-bind="template: { name: 'progress-bar', if: audioLoaded, afterRender: setupPlayer }, click: skipTo">
            </span>
          </div>
          <div data-bind="if: expandedVideo">
@@ -47,7 +42,7 @@
     </footer>
     <script type="text/html" id="progress-bar">
       <span class="shape"></span>
-      <span class="loaded"></span>
+      <span class="loaded" data-bind="style: { width: percent() + '%' }"></span>
       <span class="played"></span>
       <p class="time" data-bind="text: timeString"></p>
       <audio data-bind="attr: { src: audio } "></audio></div>
