@@ -15,7 +15,7 @@
     self.date = config.date;
     self.thumbnail = config.thumbnail;
     self.embedUrl = ko.computed(function() {
-      return embeddedPlayerUrl(self.id());
+      return embeddedPlayerUrl(self.id()) + "&showinfo=0&autoplay=1";
     });
     self.audio = ko.observable();
     self.hasAudio = ko.observable(false);
@@ -35,7 +35,7 @@
     // Play controls - TODO - move these into custom model...
     self.audioLoaded = ko.observable(false);
     self.play = function() {
-      if(!self.audioLoaded()) { self.audioLoaded(true); }
+      //if(!self.audioLoaded()) { self.audioLoaded(true); }
       // TODO - feed events to audio widget?
       var audio = self.audioEl();
       if(audio) {
@@ -60,9 +60,9 @@
     self.skipTo = function(data, e) {
       var audio = self.audioEl();
       if (audio) {
-        var left = e.offsetX - 15;
+        var left = e.offsetX;
         var progress = e.currentTarget;
-        var percent = left / ($(progress).width() - 30 );
+        var percent = left / ($(progress).width() );
         audio.currentTime = percent * audio.duration;
       }
     };
@@ -112,7 +112,7 @@
 
     self.shownpodcasts = ko.computed(function() {
       //TODO - paginate!
-      return self.podcasts().slice(0,12);
+      return self.podcasts() //.slice(0,12);
     });
     self.load = function() {
       feeds.readYoutube(youtubeUrl, function(feed) {

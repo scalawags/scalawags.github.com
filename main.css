@@ -1,36 +1,49 @@
+/*
+ * Design by Maxime Dantec - 2013
+ * @iamwarry - http://warry.fr
+ */
+
 html, body {
     height: 100%;
 }
-footer *, footer, header *, header {
+
+/* Quick & Dirty css reset, don't do this @ home */
+* {
     margin: 0;
     padding: 0;
     border: 0;
     box-sizing: border-box;
 }
+
 body {
     background: #8bd5cb;
-    font: 14px "Helvetica Neue", sans-serif;
+    font: 14px "Open Sans","Helvetica Neue", sans-serif;
 }
+
 a {
     color: #e5554d;
     text-decoration: none;
 }
+
 h1, h2, h3, time {
-    font-family: "HelveticaNeue-CondensedBold", "Open Sans Condensed", "Helvetica", sans-serif;
+    font-family: "Open Sans Condensed", "HelveticaNeue-CondensedBold", "Helvetica", sans-serif;
     font-weight: bold;
     font-stretch: condensed;
     letter-spacing: -.03em;
 }
+ul {
+    padding-left: 20px;
+}
+
 #logo {
     display: block;
     height: 200px;
     background: #fff url(scalawags.png) center center no-repeat;
-    background-size: 80%;
     text-indent: -99em;
 }
+
 header {
     background: #4a3930 url(pirate.png) 0 270px no-repeat;
-    background-size: 100%;
     position: fixed;
     top: 0;
     left: 0;
@@ -38,18 +51,34 @@ header {
     width: 400px;
     box-shadow: 5px 5px 0 #8bd5cb, 10px 10px 0 rgba(255,255,255,.3);
 }
+
 nav {
     background: #e5554d;
     height: 70px;
+    text-align: center;
 }
-footer {
-    background: #4a3930;
-    color: #85736a;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 400px;
-    padding: 20px;
+nav a {
+    background: url(/social.png) 0 0 no-repeat;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-indent: -999em;
+    margin: 10px 5px;
+}
+nav a[href*="twitter"]           { background-position: 0 0; }
+nav a[href*="twitter"]:hover     { background-position: 0 -50px; }
+nav a[href*="google"]            { background-position: -100px 0; }
+nav a[href*="google"]:hover      { background-position: -100px -50px; }
+nav a[href*="youtube"]           { background-position: -50px 0; }
+nav a[href*="youtube"]:hover     { background-position: -50px -50px; }
+nav a[href*="libsyn"]            { background-position: -150px 0; }
+nav a[href*="libsyn"]:hover      { background-position: -150px -50px; }
+
+#loader {
+    position: absolute;
+    top: 100px;
+    left: 680px;
+    width: 20px;
 }
 
 #list {
@@ -58,7 +87,7 @@ footer {
 }
 article {
     position: relative;
-    width: 500px;
+    max-width: 600px;
     margin: 0 0 50px 0;
     padding: 20px;
     background: #fff;
@@ -69,8 +98,23 @@ article.popup {
     margin: 50px auto;
 }
 article h1 {
+    color: #e5554d;
     font-size: 22px;
+    margin: 0;
 }
+article h2 {
+    text-align: center;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+article h2:after {
+    content: "";
+    display: block;
+    width: 30px;
+    border-top: 2px solid #4a3930;
+    margin: 0 auto;
+}
+
 article a:hover {
     text-decoration: underline;
 }
@@ -79,7 +123,7 @@ article .feat:before {
 }
 article time {
     position: absolute;
-    top: 22px;
+    top: 24px;
     right: 0;
     height: 20px;
     line-height: 20px;
@@ -90,22 +134,26 @@ article time {
     text-transform: uppercase;
 }
 
-article div.notes {
+article section {
     position: relative;
     height: 120px;
     overflow: hidden;
 }
-
-article div.expand {
+article section.expand {
   overflow: auto;
   height: 100%;
 }
-
-article div.expand:before {
+article section.expand:before {
   background: none;
 }
+article section.expand:after {
+  content: "Shrink";
+}
+article section p {
+    margin: 1em 0 .5em;
+}
 
-article div.notes:before {
+article section:before {
     content: " ";
     display: block;
     position: absolute;
@@ -117,8 +165,8 @@ article div.notes:before {
     background: -moz-linear-gradient(top, rgba(255,255,255,0), #fff);
     background: linear-gradient(top, rgba(255,255,255,0), #fff);
 }
-
-#notestoggle {
+article section:after {
+    content: "Read more";
     display: block;
     position: absolute;
     left: 0;
@@ -127,13 +175,11 @@ article div.notes:before {
     color: #e5554d;
     text-align: center;
 }
-article div.notes p {
-    margin: 1em 0 .5em;
-}
 
 .player {
+    position: relative;
     height: 40px;
-    margin: 10px -20px;
+    margin: 10px -20px 0;
     padding: 0 20px;
     background: #e5554d;
 }
@@ -143,31 +189,27 @@ article div.notes p {
     height: 40px;
     width: 40px;
     cursor: pointer;
-}
-.player a {
     background: url(buttons.png) 0 0 no-repeat;
-    background-size: 160px 40px;
 }
 .player a:hover {
     background-color: #c73931;
 }
-
 .player .play {
     background: url(buttons.png) 0 0 no-repeat;
-    background-size: 160px 40px;
 }
-
 .player .progress {
-    position: relative;
     display: block;
     float: left;
     height: 40px;
-    width: 340px;
+    position: absolute;
+    top: 0;
+    left: 76px;
+    right: 116px;
 }
 .player .progress span {
     position: absolute;
     top: 16px;
-    left: 16px;
+    left: 0;
     bottom: 16px;
     min-width: 8px;
     border-radius: 10px;
@@ -175,8 +217,8 @@ article div.notes p {
 .player .progress .shape {
     top: 14px;
     bottom: 14px;
-    left: 14px;
-    right: 14px;
+    left: -2px;
+    right: -2px;
     background: #b4271f;
 }
 .player .progress .played {
@@ -186,6 +228,7 @@ article div.notes p {
     background: #e5554d;
     width: 20%;
 }
+
 .player .time {
     color: #fff;
     position: absolute;
@@ -200,15 +243,102 @@ article div.notes p {
     background-position: -40px 0;
 }
 .player .download {
+    float: right;
     background-position: -80px 0;
 }
 .player .popup {
+    float: right;
     background-position: -120px 0;
 }
 
-.hide, .player .hide {
-  display: hidden;
-  width: 0px;
-  height: 0px;
+.video {
+    margin: 0 -20px;
+    background: #000;
+}
+iframe {
+    display: block;
+    width: 480px;
+    margin: 0 auto;
 }
 
+.shownotes {
+    margin: 20px 0;
+}
+
+#videoCarousel {
+  width: 300px;
+  height: 190px;
+}
+#videoCarousel img {
+  width: 300px;
+  height: 189px;
+}
+
+
+
+@media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx) { 
+
+    #logo {
+       background: #fff url(scalawags@2x.png) center center no-repeat;
+        background-size: 320px;
+    }
+    header {
+        background: #4a3930 url(pirate@2x.png) 0 270px no-repeat;
+        background-size: 100%;
+    }
+    nav a {
+        background: url(/social@2x.png) 0 0 no-repeat;
+        background-size: 200px 100px;
+    }
+    .player a {
+        background: url(buttons@2x.png) 0 0 no-repeat;
+        background-size: 160px 40px;
+    }
+    .player .play {
+        background: url(buttons@2x.png) 0 0 no-repeat;
+        background-size: 160px 40px;
+    }
+
+}
+
+
+@media only screen and (max-width: 980px) {
+
+    header {
+        width: auto;
+        position: relative;
+        background: #4a3930 !important;
+    }
+    #loader {
+        top: 330px;
+        left: 50%;
+    }
+    #list {
+        margin: 0;
+        padding: 20px;
+    }
+    article {
+        width: auto;
+        max-width: 900px;
+    }
+
+    nav a {
+        background: url(/social@2x.png) 0 0 no-repeat;
+        background-size: 200px 100px;
+    }
+    .player a {
+        background: url(buttons@2x.png) 0 0 no-repeat;
+        background-size: 160px 40px;
+    }
+    .player .play {
+        background: url(buttons@2x.png) 0 0 no-repeat;
+        background-size: 160px 40px;
+    }
+
+}

@@ -7,45 +7,45 @@
     <title>The Scalawags - Monthly podcasts about Scala language.</title>
     <meta name="description" content="Monthly podcasts about Scala language">
     <meta name="viewport" content="width=device-width">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="main.css">
     <link href="http://thescalawags.libsyn.com/rss" rel="alternate" type="application/rss+xml" title="Scalawags Podcast" />
   </head>
   <body>
     <header>
-      <a href="/" id="logo">Scalawags</a>
+        <a href="/" id="logo">Scalawags</a>
         <nav>
-          <a href="#">Twitter</a>
-          <a href="#">Youtube</a>
-          <a href="#">About</a>
+            <a href="https://twitter.com/thescalawags">Twitter</a>
+            <a href="https://plus.google.com/103832137805220517975/posts">Google+</a>
+            <a href="http://www.youtube.com/channel/UCHxNwi3l5CGZo1kG47k7i2Q/feed?filter=2">Youtube</a>
+            <a href="http://thescalawags.libsyn.com/">Libsyn</a>
         </nav>
     </header>
+    <img id="loader" src="load.gif" />
     <section id="list" data-bind="foreach: shownpodcasts">
       <article>
-         <h1><a data-bind="text: title"></a></h1>
+         <h1 data-bind="text: title"></h1>
          <time data-bind="text: date"></time>
          <div class="player">
            <!-- TODO - Add play back... -->
-           <a class="download" data-bind="attr: { href: audio }, css: audioDisplayCss"></a>
+           <a class="download" data-bind="attr: { href: audio }"></a>
            <a class="popup" data-bind="click: toggleVideo"></a>
            <a class="play" data-bind="click: play, css: pausedCss"></a>
-           <span class="progress" data-bind="template: { name: 'progress-bar', if: audioLoaded, afterRender: setupPlayer }, click: skipTo">
+           <span class="progress" data-bind="template: { name: 'progress-bar', afterRender: setupPlayer }, click: skipTo">
            </span>
          </div>
-         <div data-bind="if: expandedVideo">
-            <iframe data-bind="attr: { src: embedUrl, title: title }" width="480" height="390" frameborder="0"></iframe>
+         <div class="video" data-bind="if: expandedVideo">
+            <iframe data-bind="attr: { src: embedUrl, title: title }" width="480" height="300" frameborder="0"></iframe>
          </div>
          <div class="shownotes" data-bind="html: shownotes"></div>
        </article>
     </section>
-    <footer>
-      <p>The Scalawags, 2013</p>
-    </footer>
     <script type="text/html" id="progress-bar">
       <span class="shape"></span>
-      <span class="loaded" data-bind="style: { width: percent() + '%' }"></span>
+      <span class="played" data-bind="style: { width: percent() + '%' }"></span>
       <span class="played"></span>
       <p class="time" data-bind="text: timeString"></p>
-      <audio data-bind="attr: { src: audio } "></audio></div>
+      <audio  preload="none" data-bind="attr: { src: audio } "></audio></div>
     </script>
     <script src="jquery.min.js"></script>
     <script src="knockout-2.2.1.js"></script>
@@ -67,3 +67,4 @@
 </script>
   </body>
 </html>
+
