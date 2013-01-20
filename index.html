@@ -27,6 +27,14 @@
            <!-- TODO - Add play back... -->
            <a class="download" data-bind="attr: { href: audio }"></a>
            <a class="popup" data-bind="click: toggleVideo"></a>
+           <a class="play" data-bind="click: play, css: pausedCss"></a>
+           <span class="progress" data-bind="template: { name: 'progress-bar', if: audioLoaded, afterRender: setupPlayer }">
+           <!--  <span class="shape"></span>
+             <span class="loaded"></span>
+             <span class="played"></span>
+             <p class="time"></p>
+             <audio data-bind="attr: { src: audio } "></audio></div> -->
+           </span>
          </div>
          <div data-bind="if: expandedVideo">
             <iframe data-bind="attr: { src: embedUrl, title: title }" width="480" height="390" frameborder="0"></iframe>
@@ -37,6 +45,13 @@
     <footer>
       <p>The Scalawags, 2013</p>
     </footer>
+    <script type="text/html" id="progress-bar">
+      <span class="shape"></span>
+      <span class="loaded"></span>
+      <span class="played"></span>
+      <p class="time" data-bind="text: timeString"></p>
+      <audio data-bind="attr: { src: audio } "></audio></div>
+    </script>
     <script src="jquery.min.js"></script>
     <script src="knockout-2.2.1.js"></script>
     <script src="feeds.js"></script>
