@@ -107,7 +107,10 @@
       return timeToString(self.duration());
     });
     self.timeString = ko.computed(function() {
-      return timeToString(self.currentTime()) + " / " + self.durationString();
+      if(self.hasAudio()) {
+        return timeToString(self.currentTime()) + " / " + self.durationString();
+      }
+      return 'Audio not available';
     });
   }
 
