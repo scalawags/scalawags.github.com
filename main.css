@@ -206,3 +206,9 @@ article div.notes p {
     background-position: -120px 0;
 }
 
+.hide, .player .hide {
+  display: hidden;
+  width: 0px;
+  height: 0px;
+}
+

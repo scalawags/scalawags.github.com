@@ -25,7 +25,7 @@
          <time data-bind="text: date"></time>
          <div class="player">
            <!-- TODO - Add play back... -->
-           <a class="download" data-bind="attr: { href: audio }"></a>
+           <a class="download" data-bind="attr: { href: audio }, css: audioDisplayCss"></a>
            <a class="popup" data-bind="click: toggleVideo"></a>
            <a class="play" data-bind="click: play, css: pausedCss"></a>
            <span class="progress" data-bind="template: { name: 'progress-bar', if: audioLoaded, afterRender: setupPlayer }, click: skipTo">

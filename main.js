@@ -17,8 +17,12 @@
     self.embedUrl = ko.computed(function() {
       return embeddedPlayerUrl(self.id());
     });
-    // Loaded later
     self.audio = ko.observable();
+    self.hasAudio = ko.observable(false);
+    // Loaded later
+    self.audioDisplayCss = ko.computed(function() {
+      return self.hasAudio() ? '' : 'hide';
+    });
     self.audioLink = ko.observable();
     self.shownotes = ko.observable('<i>No Show notes Available</i>');
 
@@ -44,10 +48,7 @@
     };
     self.playing = ko.observable(false);
     self.pausedCss = ko.computed(function() {
-      if(self.playing()) {
-        return 'pause';
-      }
-      return '';
+      return self.playing() ? 'pause' : self.audioDisplayCss();
     });
     // TODO - figure out how to bind this directly to the audio element...
     self.currentTime = ko.observable(0);
@@ -129,6 +130,7 @@
                  podcast.audio(audio.audio);
                  podcast.title(audio.title);
                  podcast.shownotes(audio.text);
+                 podcast.hasAudio(true);
                }
              }
            });
