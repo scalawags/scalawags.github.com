@@ -24,12 +24,17 @@
       return self.hasAudio() ? '' : 'hide';
     });
     self.audioLink = ko.observable();
-    self.shownotes = ko.observable('<i>No Show notes Available</i>');
+    self.shownotes = ko.observable();
 
     // User controlled state/actions
     self.expandedVideo = ko.observable(false);
     self.toggleVideo = function() {
       self.expandedVideo(!self.expandedVideo());
+    }
+
+    self.expandedNotes = ko.observable(false);
+    self.toogleNotes = function() {
+      self.expandedNotes(!self.expandedNotes());
     }
 
     // Play controls - TODO - move these into custom model...

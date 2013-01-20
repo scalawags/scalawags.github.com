@@ -37,7 +37,12 @@
          <div class="video" data-bind="if: expandedVideo">
             <iframe data-bind="attr: { src: embedUrl, title: title }" width="480" height="300" frameborder="0"></iframe>
          </div>
-         <div class="shownotes" data-bind="html: shownotes"></div>
+         <section data-bind="if: shownotes">
+             <h2>Episode treasures</h2>
+             <div class="shownotes" data-bind="html: shownotes, css: {expand: expandedNotes() }"></div>
+             <span class="toogleNotes" data-bind="text: expandedNotes()?'Shrink':'Expand', click: toogleNotes"></span>
+         </section>
+         <p class="noNotes" data-bind="ifnot: shownotes">No notes for this show.</p>
        </article>
     </section>
     <script type="text/html" id="progress-bar">

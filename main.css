@@ -103,6 +103,7 @@ article h1 {
     margin: 0;
 }
 article h2 {
+    margin: 20px 0;
     text-align: center;
     font-size: 22px;
     text-transform: uppercase;
@@ -134,26 +135,23 @@ article time {
     text-transform: uppercase;
 }
 
-article section {
+article .shownotes {
     position: relative;
     height: 120px;
     overflow: hidden;
 }
-article section.expand {
+article .shownotes.expand {
   overflow: auto;
   height: 100%;
 }
-article section.expand:before {
+article .shownotes.expand:before {
   background: none;
 }
-article section.expand:after {
-  content: "Shrink";
-}
-article section p {
+article .shownotes p {
     margin: 1em 0 .5em;
 }
 
-article section:before {
+article .shownotes:before {
     content: " ";
     display: block;
     position: absolute;
@@ -164,16 +162,6 @@ article section:before {
     background: -webkit-linear-gradient(top, rgba(255,255,255,0), #fff);
     background: -moz-linear-gradient(top, rgba(255,255,255,0), #fff);
     background: linear-gradient(top, rgba(255,255,255,0), #fff);
-}
-article section:after {
-    content: "Read more";
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    color: #e5554d;
-    text-align: center;
 }
 
 .player {
@@ -263,6 +251,18 @@ iframe {
 
 .shownotes {
     margin: 20px 0;
+}
+span.toogleNotes {
+    cursor: pointer;
+    color: #e5554d;
+    display: block;
+    text-align: center;
+}
+.noNotes {
+    margin: 20px 0 0;
+    text-align: center;
+    font-style: italic;
+    color: #999;
 }
 
 #videoCarousel {
