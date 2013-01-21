@@ -18,7 +18,7 @@
           title: $item.find('title').text(),
           link:  $item.find('link').text(),
           text: $item.find('description').text(),
-          date: month,
+          date: date.getDate() + ' ' + month,
           audio: $item.find('enclosure').attr('url'),
         }; 
         return result;
@@ -40,7 +40,7 @@
       var result = {
         id: ids[ids.length-1],
         title: item.title.$t,
-        date: month,
+        date: date.getDate() + ' ' + month,
         thumbnail: item.media$group.media$thumbnail[0].url,
         playerUrl: item.media$group.media$content[0].url,
         raw_video: item.media$group.media$content[1].url
