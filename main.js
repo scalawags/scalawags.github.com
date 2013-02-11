@@ -14,7 +14,8 @@
     return window.location.pathname;
   }
   function isDetailsUri() {
-    return currentUri() == '/';
+    var uri = currentUri();
+    return uri && uri != '/';
   }
   function normalizeName(name) {
     return name.replace(/[^\w]/gi, '').toLowerCase();
@@ -134,7 +135,7 @@
     self.podcasts = ko.observableArray();
 
     self.shownpodcasts = ko.computed(function() {
-      if(isDetailsUri) {
+      if(isDetailsUri()) {
         // Just return the details of one podcast...
         return ko.utils.arrayFilter(self.podcasts(), function(podcast) {
           return titleMatchesUri(podcast);
