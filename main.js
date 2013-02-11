@@ -8,6 +8,21 @@
     return 'http://www.youtube.com/v/'+id+'?version=3&enablejsapi=1';
   }
 
+
+  function currentUri() {
+    // TODO - Cross browser?
+    return window.location.pathname;
+  }
+  function isDetailsUri() {
+    return currentUri() == '/';
+  }
+  function normalizeName(name) {
+    return name.replace(/[^\w]/gi, '').toLowerCase();
+  }
+  function titleMatchesUri(podcast) {
+    return normalizeName(currentUri().slice(1)) == normalizeName(podcast.title());
+  }
+
   function Podcast(config) {
     var self = this;
     self.id = ko.observable(config.id);
@@ -119,6 +134,12 @@
     self.podcasts = ko.observableArray();
 
     self.shownpodcasts = ko.computed(function() {
+      if(isDetailsUri) {
+        // Just return the details of one podcast...
+        return ko.utils.arrayFilter(self.podcasts(), function(podcast) {
+          return titleMatchesUri(podcast);
+        });
+      }
       //TODO - paginate!
       return self.podcasts() //.slice(0,12);
     });
