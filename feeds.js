@@ -42,8 +42,7 @@
         title: item.title.$t,
         date: date.getDate() + ' ' + month,
         thumbnail: item.media$group.media$thumbnail[0].url,
-        playerUrl: item.media$group.media$content[0].url,
-        raw_video: item.media$group.media$content[1].url
+        playerUrl: item.media$group.media$content[0].url
       }; 
       return result;
     });  
