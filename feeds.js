@@ -19,6 +19,7 @@
           link:  $item.find('link').text(),
           text: $item.find('description').text(),
           date: date.getDate() + ' ' + month,
+          timestamp: date,
           audio: $item.find('enclosure').attr('url'),
         }; 
         return result;
@@ -41,6 +42,7 @@
         id: ids[ids.length-1],
         title: item.title.$t,
         date: date.getDate() + ' ' + month,
+        timestamp: date,
         thumbnail: item.media$group.media$thumbnail[0].url,
         playerUrl: item.media$group.media$content[0].url
       }; 

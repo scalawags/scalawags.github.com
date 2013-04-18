@@ -26,10 +26,14 @@
 
   function Podcast(config) {
     var self = this;
-    self.id = ko.observable(config.id);
+    self.timestamp = config.timestamp || new Date();
+    self.id = ko.observable(config.id || '');
     self.title = ko.observable(config.title);
     self.date = config.date;
-    self.thumbnail = config.thumbnail;
+    self.thumbnail = config.thumbnail || '';
+    self.hasVideo = ko.computed(function() {
+      return self.id() != '';
+    });
     self.embedUrl = ko.computed(function() {
       return embeddedPlayerUrl(self.id()) + "&showinfo=0&autoplay=1";
     });
@@ -133,7 +137,10 @@
   function PageModel() {
     var self = this;
     self.podcasts = ko.observableArray();
-
+    self.sortedPodcasts = ko.computed(function() {
+       var copy = self.podcasts().slice(0);
+       return copy.sort(function(l,r) { return l.timestamp < r.timestamp });
+    });
     self.shownpodcasts = ko.computed(function() {
       if(isDetailsUri()) {
         // Just return the details of one podcast...
@@ -142,7 +149,7 @@
         });
       }
       //TODO - paginate!
-      return self.podcasts() //.slice(0,12);
+      return self.sortedPodcasts() //.slice(0,12);
     });
     self.load = function() {
       feeds.readYoutube(youtubeUrl, function(feed) {
@@ -153,6 +160,7 @@
            $.each(feed, function(ignore, audio) {
              // TODO - Try to line up the audio with the video
              var podcasts = self.podcasts();
+             var found = false;
              for(var i = 0; i < podcasts.length; ++i) {
                var podcast = podcasts[i];
                if(podcast.date == audio.date) {
@@ -161,7 +169,13 @@
                  podcast.title(audio.title);
                  podcast.shownotes(audio.text);
                  podcast.hasAudio(true);
+                 found = true;
                }
+             }
+             if(!found) {
+             // Push podcast anyway (no corresponding video)
+             console.log('No podcast video for: ', audio);
+             self.podcasts.push(new Podcast(audio));
              }
            });
          });
