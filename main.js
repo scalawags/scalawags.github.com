@@ -1,6 +1,6 @@
 (function(){
 
-  var youtubeUrl = 'https://gdata.youtube.com/feeds/api/users/UCHxNwi3l5CGZo1kG47k7i2Q/uploads?alt=json-in-script&format=5';
+  var youtubeUrl = 'https://gdata.youtube.com/feeds/api/users/UCHxNwi3l5CGZo1kG47k7i2Q/uploads?alt=json-in-script';
   var libsynUrl = '/rss';
 
 
@@ -11,6 +11,9 @@
 
   function currentUri() {
     // TODO - Cross browser?
+    if(/.*localhost.*/.exec(window.location.href)) {
+      return '/';
+    }
     return window.location.pathname;
   }
   function isDetailsUri() {
