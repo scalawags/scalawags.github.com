@@ -40,14 +40,14 @@
     self.embedUrl = ko.computed(function() {
       return embeddedPlayerUrl(self.id()) + "&showinfo=0&autoplay=1";
     });
-    self.audio = ko.observable();
-    self.hasAudio = ko.observable(false);
+    self.audio = ko.observable(config.audio);
+    self.hasAudio = ko.observable(config.audio ? true : false);
     // Loaded later
     self.audioDisplayCss = ko.computed(function() {
       return self.hasAudio() ? '' : 'hide';
     });
     self.audioLink = ko.observable();
-    self.shownotes = ko.observable();
+    self.shownotes = ko.observable(config.text);
 
     // User controlled state/actions
     self.expandedVideo = ko.observable(false);
