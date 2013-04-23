@@ -12,13 +12,13 @@
       var results = $.map(xmlResults, function(item, idx) {  
         var $item = $(item); 
         var date = new Date($item.find('pubDate').text());
-        var month = monthNames[date.getMonth()];
+        var month = monthNames[date.getUTCMonth()];
         var result = {
           id: idx,
           title: $item.find('title').text(),
           link:  $item.find('link').text(),
           text: $item.find('description').text(),
-          date: date.getDate() + ' ' + month,
+          date: date.getUTCDate() + ' ' + month,
           timestamp: date,
           audio: $item.find('enclosure').attr('url'),
         }; 
@@ -35,13 +35,13 @@
     var raw = $.makeArray(feed.entry);
     var results = $.map(raw, function(item, idx) {
       var date = new Date(item.published.$t);
-      var month = monthNames[date.getMonth()];
+      var month = monthNames[date.getUTCMonth()];
       // Capture odd Youtube ID.
       var ids = item.id.$t.split('/');
       var result = {
         id: ids[ids.length-1],
         title: item.title.$t,
-        date: date.getDate() + ' ' + month,
+        date: date.getUTCDate() + ' ' + month,
         timestamp: date,
         thumbnail: item.media$group.media$thumbnail[0].url,
         playerUrl: item.media$group.media$content[0].url
