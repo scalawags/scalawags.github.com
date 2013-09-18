@@ -142,7 +142,7 @@
     self.podcasts = ko.observableArray();
     self.sortedPodcasts = ko.computed(function() {
        var copy = self.podcasts().slice(0);
-       return copy.sort(function(l,r) { return l.timestamp.getTime()  - r.timestamp.getTime(); });
+       return copy.sort(function(l,r) { return r.timestamp.getTime()  - l.timestamp.getTime(); });
     });
     self.shownpodcasts = ko.computed(function() {
       if(isDetailsUri()) {
