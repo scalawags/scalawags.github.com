@@ -5,6 +5,10 @@
   //var youtubeUrl = 'https://gdata.youtube.com/feeds/api/users/UCHxNwi3l5CGZo1kG47k7i2Q/uploads?alt=json-in-script';
   var libsynUrl = '/rss';
 
+  function makeVideoUrl(id) {
+    return ' https://www.googleapis.com/youtube/v3/videos?part=player&id='+id+'&key=' + apiKey;
+  }
+
 
   function embeddedPlayerUrl(id) {
     return 'http://www.youtube.com/v/'+id+'?version=3&enablejsapi=1';
@@ -39,6 +43,22 @@
     self.hasVideo = ko.computed(function() {
       return self.id() != '';
     });
+    self.videoInitialized = ko.observable(false);
+    self.youtubeVideoHtml = ko.observable('');
+    self.embedHtml = ko.computed(function() {
+      if(!self.expandedVideo()) {
+        return '';
+      }
+      if(!self.videoInitialized) {
+        self.initializeVideo();
+        return '';
+      }
+      return self.youtubeVideoHtml();
+    });
+    self.initializeVideo = function() {
+      var url = makeVideoUrl(self.id());
+      feeds.getYoutubeHtml(url, self.youtubeVideoHtml)
+    };
     self.embedUrl = ko.computed(function() {
       return embeddedPlayerUrl(self.id()) + "&showinfo=0&autoplay=1";
     });

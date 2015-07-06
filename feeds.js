@@ -62,9 +62,31 @@
       }
     });
   };
+
+  function parseYoutubeVideo(data) {
+    if(data.items && data.items.length) {
+      return data.items[0].player.embedHtml;
+    }
+    return '<span>No youtube video found</span>';
+  };
+
+  function getEmbeddHtml(url, handler) {
+    $.ajax({
+      url: url,
+      dataType: 'jsonp',
+      success: function(data) {
+        handler(parseYoutubeVideo(data));
+      }
+    })
+  }
+
+  // Grabs the embedded youtube HTML for a video.
+  // args: id - the youtube id.
+
   $scope.feeds = {
     readYoutube: readYoutubeFeed,
-    readLibsyn:  readLibsynFeed
+    readLibsyn:  readLibsynFeed,
+    getYoutubeHtml: getEmbeddHtml
   }
 
 })($, window);
