@@ -46,20 +46,6 @@
     self.videoInitialized = ko.observable(false);
     self.youtubeVideoHtml = ko.observable('');
     self.expandedVideo = ko.observable(false);
-    self.embedHtml = ko.computed(function() {
-      if(!self.expandedVideo()) {
-        return '';
-      }
-      if(!self.videoInitialized()) {
-        self.initializeVideo();
-        return '';
-      }
-      return self.youtubeVideoHtml();
-    });
-    self.initializeVideo = function() {
-      var url = makeVideoUrl(self.id());
-      feeds.getYoutubeHtml(url, self.youtubeVideoHtml)
-    };
     self.embedUrl = ko.computed(function() {
       return embeddedPlayerUrl(self.id()) + "&showinfo=0&autoplay=1";
     });
