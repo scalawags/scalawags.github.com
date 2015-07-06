@@ -45,6 +45,7 @@
     });
     self.videoInitialized = ko.observable(false);
     self.youtubeVideoHtml = ko.observable('');
+    self.expandedVideo = ko.observable(false);
     self.embedHtml = ko.computed(function() {
       if(!self.expandedVideo()) {
         return '';
@@ -72,7 +73,6 @@
     self.shownotes = ko.observable(config.text);
 
     // User controlled state/actions
-    self.expandedVideo = ko.observable(false);
     self.toggleVideo = function() {
       self.expandedVideo(!self.expandedVideo());
     }
