@@ -31,7 +31,7 @@
   // less protocol buffer-y and auto-generated and more
   // javascript-y.
   function parseYoutubeFeed(data) {
-    var raw = $.makeArray(dataType.items);
+    var raw = $.makeArray(data.items);
     var results = $.map(raw, function(item, idx) {
       var snippet = item.snippet;
       var date = new Date(snippet.publishedAt);
