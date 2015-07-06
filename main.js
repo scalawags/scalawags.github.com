@@ -50,7 +50,7 @@
       if(!self.expandedVideo()) {
         return '';
       }
-      if(!self.videoInitialized) {
+      if(!self.videoInitialized()) {
         self.initializeVideo();
         return '';
       }
