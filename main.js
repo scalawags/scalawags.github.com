@@ -1,6 +1,8 @@
 (function(){
 
-  var youtubeUrl = 'https://gdata.youtube.com/feeds/api/users/UCHxNwi3l5CGZo1kG47k7i2Q/uploads?alt=json-in-script';
+  var apiKey = 'AIzaSyCNOGQXHNq3MJTaZzmf2u94xXxXEcrXcBM';
+  var youtubeUrl = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UUHxNwi3l5CGZo1kG47k7i2Q&key='+apiKey;
+  //var youtubeUrl = 'https://gdata.youtube.com/feeds/api/users/UCHxNwi3l5CGZo1kG47k7i2Q/uploads?alt=json-in-script';
   var libsynUrl = '/rss';
 
 

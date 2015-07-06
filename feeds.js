@@ -31,20 +31,20 @@
   // less protocol buffer-y and auto-generated and more
   // javascript-y.
   function parseYoutubeFeed(data) {
-    var feed = data.feed;
-    var raw = $.makeArray(feed.entry);
+    var raw = $.makeArray(data.items);
     var results = $.map(raw, function(item, idx) {
-      var date = new Date(item.published.$t);
+      var snippet = item.snippet;
+      var date = new Date(snippet.publishedAt);
       var month = monthNames[date.getUTCMonth()];
-      // Capture odd Youtube ID.
-      var ids = item.id.$t.split('/');
       var result = {
-        id: ids[ids.length-1],
-        title: item.title.$t,
+        id: snippet.playlistId,
+        title: snippet.title,
         date: date.getUTCDate() + ' ' + month,
         timestamp: date,
-        thumbnail: item.media$group.media$thumbnail[0].url,
-        playerUrl: item.media$group.media$content[0].url
+        thumbnail: snippet.thumbnails.default.url
+        // TODO - we need to make an additional call to youtube to grab the "embedd HTML" for the video.
+        //        for this, we should actually create a new property which can grab the data on demand...
+        //playerUrl: item.media$group.media$content[0].url
       }; 
       return result;
     });  
