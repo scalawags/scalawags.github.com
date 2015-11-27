@@ -19,6 +19,7 @@
           link:  $item.find('link').text(),
           text: $item.find('description').text(),
           date: date.getUTCDate() + ' ' + month,
+          year: date.getUTCFullYear(),
           timestamp: date,
           audio: $item.find('enclosure').attr('url'),
         }; 
@@ -40,6 +41,7 @@
         id: item.contentDetails.videoId,
         title: snippet.title,
         date: date.getUTCDate() + ' ' + month,
+        year: date.getUTCFullYear(),
         timestamp: date,
         thumbnail: snippet.thumbnails.default.url
         // TODO - we need to make an additional call to youtube to grab the "embedd HTML" for the video.

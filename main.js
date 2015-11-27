@@ -39,6 +39,7 @@
     self.id = ko.observable(config.id || '');
     self.title = ko.observable(config.title);
     self.date = config.date;
+    self.year = config.year;
     self.thumbnail = config.thumbnail || '';
     self.hasVideo = ko.computed(function() {
       return self.id() != '';
@@ -174,7 +175,8 @@
              var found = false;
              for(var i = 0; i < podcasts.length; ++i) {
                var podcast = podcasts[i];
-               if(podcast.date == audio.date) {
+               if((podcast.date == audio.date) && 
+                  (podcast.year == audio.year)) {
                  // Assume these line up....
                  podcast.audio(audio.audio);
                  podcast.title(audio.title);
